@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<body>
+  <div id="page1">
+    <h1>MRSAI</h1>
+    <p>My name is Sai</p>
+    <button onclick="page('page2')">Next</button>
+  </div>
+  <div id="page2" style="display:none;">
+    <h1>Good</h1>
+    <p>Yes, I am good</p>
+    <button onclick="page('page1')">Back</button>
+    <button onclick="submitForm()">Submit</button>
+  </div>
+  <div id="submitted" style="display:none;">
+    <h1>Submitted</h1>
+  </div>
+  
+  <script>
+    function page(id) {
+      document.getElementById(id).style.display = "block";
+      document.getElementById(id === "page1" ? "page2" : "page1").style.display = "none";
+    }
+    
+    function submitForm() {
+      document.getElementById("page2").style.display = "none";
+      document.getElementById("submitted").style.display = "block";
+    }
+  </script>
+</body>
+</html>
